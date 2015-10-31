@@ -3,8 +3,18 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+
 # Use sqlite3 as the database for Active Record
+group :development, :test do
 gem 'sqlite3'
+end
+
+#Use postgresql as the database for production 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,3 +55,24 @@ group :development do
   gem 'spring'
 end
 
+
+#Additional Gems Added outside of Cloud 9
+
+#Twitter Bootstrap Gem - Document Styling (Current Release: June 25th 2015)
+gem 'bootstrap-sass', '3.3.5.1'
+
+#Devise Gem - User Authentication (Current Release: August 10 2015)
+gem 'devise', '3.5.2'
+
+#Stripe Gem - Mobile/Credit Card Payments (Current Release: October 29 2015)
+# WARNING: REMOVED CURRENTLY UNTIL LIVE OPERATION/TESTING
+# gem 'stripe', '1.31.0'
+
+#Figaro Gem - Hide Secret Keys from Application (Current Release: April 30 2015)
+gem 'figaro', '1.1.1'
+
+#Paperclip Gem - Add Image Uploading Capabilities to Application (Current Release: September 10 2015)
+gem 'paperclip', '4.3.1'
+
+#Font Awesome Gem - Add Image Icons to Application (Current Release: August 18 2015)
+gem 'font-awesome-sass', '4.4.0'
